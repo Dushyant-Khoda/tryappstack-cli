@@ -1,12 +1,23 @@
-# TryAppStack CLI
+<div align="center">
 
-![npm version](https://img.shields.io/npm/v/tryappstack)
-![downloads](https://img.shields.io/npm/dm/tryappstack)
-![license](https://img.shields.io/npm/l/tryappstack)
+<img src="https://res.cloudinary.com/dsidb5jqw/image/upload/v1772630287/App_logo_light_upvroj.png" width="200" />
+
+# TryAppStack
+
+**Production-Ready Backend CLI for Node.js**
+
+[![npm version](https://img.shields.io/npm/v/tryappstack)](https://www.npmjs.com/package/tryappstack)
+[![downloads](https://img.shields.io/npm/dm/tryappstack)](https://www.npmjs.com/package/tryappstack)
+[![license](https://img.shields.io/npm/l/tryappstack)](https://www.npmjs.com/package/tryappstack)
+
+**[Website](https://tryappstack.vercel.app/)** · **[npm](https://www.npmjs.com/package/tryappstack)** · **[GitHub](https://github.com/Dushyant-Khoda/tryappstack)**
+
+</div>
+---
 
 TryAppStack CLI is a developer tool that helps you quickly create production-ready applications using modern boilerplates.
 
-Instead of manually setting up folder structures, dependencies, and architecture, TryAppStack generates a complete project in seconds.
+Instead of manually setting up folder structures, dependencies, and architecture, TryAppStack generates a complete project in seconds. **[Learn more →](https://tryappstack.vercel.app/)**
 
 ## Installation
 
