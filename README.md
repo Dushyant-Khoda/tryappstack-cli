@@ -13,6 +13,7 @@
 **[Website](https://tryappstack.vercel.app/)** · **[npm](https://www.npmjs.com/package/tryappstack)** · **[GitHub](https://github.com/Dushyant-Khoda/tryappstack)**
 
 </div>
+
 ---
 
 TryAppStack CLI is a developer tool that helps you quickly create production-ready applications using modern boilerplates.
