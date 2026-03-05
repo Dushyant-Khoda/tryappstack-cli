@@ -4,7 +4,7 @@
   "description": "CLI tool to bootstrap production-ready applications using modern boilerplates",
   "license": "MIT",
   "author": "Dushyant Khoda",
-  "homepage": "https://tryappstack.dev",
+  "homepage": "https://tryappstack.vercel.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/Dushyant-Khoda/tryappstack-cli"
