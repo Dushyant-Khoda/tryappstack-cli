@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Dushyant-Khoda/tryappstack-cli/compare/v1.0.5...v1.1.0) (2026-03-05)
+
+
+### Features
+
+* **docker:** rename dockerignore during init and add docs guide ([8143b41](https://github.com/Dushyant-Khoda/tryappstack-cli/commit/8143b411dc3da03bcb4920bdc29936673c9be1c5))
+
 # 1.0.0 (2026-03-05)
 
 
