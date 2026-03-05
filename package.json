@@ -17,6 +17,9 @@
     "tryappstack": "./bin/cli.js",
     "tas": "./bin/cli.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "bin/",
     "lib/",
