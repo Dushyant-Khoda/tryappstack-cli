@@ -1,17 +1,17 @@
 import cloudinary from "cloudinary";
 import ErrorHandler from "../Utils/CustomErrorHandler.js";
-import { CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET } from "../../Config/index.js";
+import { CLOUDINARY_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET } from "../../Config/index.js";
 
-if (CLOUD_NAME && CLOUD_API_KEY && CLOUD_API_SECRET) {
+if (CLOUDINARY_NAME && CLOUDINARY_API_KEY && CLOUDINARY_API_SECRET) {
     cloudinary.v2.config({
-        cloud_name: CLOUD_NAME,
-        api_key: CLOUD_API_KEY,
-        api_secret: CLOUD_API_SECRET,
+        CLOUDINARY_name: CLOUDINARY_NAME,
+        api_key: CLOUDINARY_API_KEY,
+        api_secret: CLOUDINARY_API_SECRET,
     });
 }
 
 /**
- * ☁️ PROFESSIONAL CLOUDINARY SERVICE
+ * PROFESSIONAL CLOUDINARY SERVICE
  * ===================================
  *
  * Enterprise-grade Cloudinary integration service providing advanced file upload,
@@ -24,12 +24,11 @@ if (CLOUD_NAME && CLOUD_API_KEY && CLOUD_API_SECRET) {
  * - File size conversion utilities
  * - Secure file management
  *
- * @author Ground Booking Team
- * @version 2.0.0
+ * @author TryAppStack
  */
 const CloudinaryService = {
     /**
-     * 📤 UPLOAD FILE TO CLOUDINARY
+     * UPLOAD FILE TO CLOUDINARY
      * =============================
      *
      * Uploads a file to Cloudinary with automatic processing and optimization.
@@ -55,9 +54,8 @@ const CloudinaryService = {
                 uploadSource = fileObject;
             } else if (fileObject.buffer) {
                 // Multer file object with buffer
-                uploadSource = `data:${
-                    fileObject.mimetype
-                };base64,${fileObject.buffer.toString("base64")}`;
+                uploadSource = `data:${fileObject.mimetype
+                    };base64,${fileObject.buffer.toString("base64")}`;
             } else if (fileObject.path) {
                 // Multer file object with path
                 uploadSource = fileObject.path;
@@ -68,7 +66,7 @@ const CloudinaryService = {
                 throw new Error("Invalid file object: unsupported file format");
             }
 
-            console.log("🔄 [CloudinaryService] Uploading file:", {
+            console.log("[CloudinaryService] Uploading file:", {
                 folder: cloudFolder,
                 sourceType: typeof uploadSource,
                 hasBuffer: !!fileObject.buffer,
@@ -82,7 +80,7 @@ const CloudinaryService = {
                 quality: "auto",
             });
 
-            console.log("✅ [CloudinaryService] Upload successful:", {
+            console.log("[CloudinaryService] Upload successful:", {
                 public_id: uploadResult.public_id,
                 url: uploadResult.secure_url,
             });
@@ -92,13 +90,13 @@ const CloudinaryService = {
                 url: uploadResult.secure_url,
             };
         } catch (uploadError) {
-            console.error("❌ [CloudinaryService] Upload failed:", uploadError.message);
+            console.error("[CloudinaryService] Upload failed:", uploadError.message);
             throw new Error(`Cloudinary upload failed: ${uploadError.message}`);
         }
     },
 
     /**
-     * 📏 CONVERT FILE SIZE TO HUMAN READABLE FORMAT
+     * CONVERT FILE SIZE TO HUMAN READABLE FORMAT
      * ==============================================
      *
      * Converts file size from bytes to a professional human-readable format.
@@ -137,7 +135,7 @@ const CloudinaryService = {
     },
 
     /**
-     * 🗑️ REMOVE FILE FROM CLOUDINARY
+     * REMOVE FILE FROM CLOUDINARY
      * ================================
      *
      * Securely removes a file from Cloudinary storage using the public_id.
@@ -163,7 +161,7 @@ const CloudinaryService = {
     },
 
     /**
-     * ⚙️ UPLOAD FILE WITH CUSTOM OPTIONS
+     * UPLOAD FILE WITH CUSTOM OPTIONS
      * ===================================
      *
      * Uploads a file to Cloudinary with advanced processing options and transformations.
@@ -201,9 +199,8 @@ const CloudinaryService = {
                 uploadSource = fileObject;
             } else if (fileObject.buffer) {
                 // Multer file object with buffer
-                uploadSource = `data:${
-                    fileObject.mimetype
-                };base64,${fileObject.buffer.toString("base64")}`;
+                uploadSource = `data:${fileObject.mimetype
+                    };base64,${fileObject.buffer.toString("base64")}`;
             } else if (fileObject.path) {
                 // Multer file object with path
                 uploadSource = fileObject.path;
@@ -214,7 +211,7 @@ const CloudinaryService = {
                 throw new Error("Invalid file object: unsupported file format");
             }
 
-            console.log("🔄 [CloudinaryService] Uploading file with options:", {
+            console.log("[CloudinaryService] Uploading file with options:", {
                 folder: cloudFolder,
                 sourceType: typeof uploadSource,
                 hasBuffer: !!fileObject.buffer,
@@ -226,7 +223,7 @@ const CloudinaryService = {
                 finalUploadOptions
             );
 
-            console.log("✅ [CloudinaryService] Upload successful:", {
+            console.log("[CloudinaryService] Upload successful:", {
                 public_id: uploadResult.public_id,
                 url: uploadResult.secure_url,
             });
@@ -236,7 +233,7 @@ const CloudinaryService = {
                 url: uploadResult.secure_url,
             };
         } catch (uploadError) {
-            console.error("❌ [CloudinaryService] Upload failed:", uploadError.message);
+            console.error("[CloudinaryService] Upload failed:", uploadError.message);
             throw new Error(`Cloudinary advanced upload failed: ${uploadError.message}`);
         }
     },

@@ -192,9 +192,9 @@ const FileUploadService = {
             const isS3Enabled = IS_S3 === "true" || IS_S3 === true;
 
             if (isS3Enabled) {
-                console.log("🔄 [FileUpload] Uploading video to AWS S3");
+                console.log("[FileUpload] Uploading video to AWS S3...");
                 const uploadResult = await S3Service._upload(videoFile, storageKey, "video/mp4");
-                console.log("✅ [FileUpload] Video successfully uploaded to S3");
+                console.log("[FileUpload] Video successfully uploaded to S3");
 
                 return {
                     url: uploadResult.Location,
@@ -202,7 +202,7 @@ const FileUploadService = {
                     bucket: uploadResult.Bucket,
                 };
             } else {
-                console.log("🔄 [FileUpload] Uploading video to Cloudinary with processing");
+                console.log("[FileUpload] Uploading video to Cloudinary with processing...");
 
                 // Professional video processing options
                 const defaultVideoOptions = {
@@ -221,7 +221,7 @@ const FileUploadService = {
                 );
 
                 console.log(
-                    "✅ [FileUpload] Video successfully uploaded to Cloudinary with processing"
+                    "[FileUpload] Video successfully uploaded to Cloudinary with processing"
                 );
                 return {
                     url: uploadResult.url,
@@ -229,7 +229,7 @@ const FileUploadService = {
                 };
             }
         } catch (uploadError) {
-            console.error("❌ [FileUpload] Video upload failed:", uploadError.message);
+            console.error("[FileUpload] Video upload failed:", uploadError.message);
             throw new Error(`Video upload failed: ${uploadError.message}`);
         }
     },
@@ -263,9 +263,9 @@ const FileUploadService = {
             const isS3Enabled = IS_S3 === "true" || IS_S3 === true;
 
             if (isS3Enabled) {
-                console.log("🔄 [FileUpload] Uploading document to AWS S3");
+                console.log("[FileUpload] Uploading document to AWS S3...");
                 const uploadResult = await S3Service._upload(documentFile, storageKey, mimeType);
-                console.log("✅ [FileUpload] Document successfully uploaded to S3");
+                console.log("[FileUpload] Document successfully uploaded to S3");
 
                 return {
                     url: uploadResult.Location,
@@ -273,7 +273,7 @@ const FileUploadService = {
                     bucket: uploadResult.Bucket,
                 };
             } else {
-                console.log("🔄 [FileUpload] Uploading document to Cloudinary");
+                console.log("[FileUpload] Uploading document to Cloudinary...");
 
                 // Professional document handling options
                 const documentOptions = {
@@ -287,14 +287,14 @@ const FileUploadService = {
                     documentOptions
                 );
 
-                console.log("✅ [FileUpload] Document successfully uploaded to Cloudinary");
+                console.log("[FileUpload] Document successfully uploaded to Cloudinary");
                 return {
                     url: uploadResult.url,
                     public_id: uploadResult.public_id,
                 };
             }
         } catch (uploadError) {
-            console.error("❌ [FileUpload] Document upload failed:", uploadError.message);
+            console.error("[FileUpload] Document upload failed:", uploadError.message);
             throw new Error(`Document upload failed: ${uploadError.message}`);
         }
     },

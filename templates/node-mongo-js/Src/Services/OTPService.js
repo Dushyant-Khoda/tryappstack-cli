@@ -43,17 +43,16 @@ const OTPService = {
         // Soft-delete older OTPs for same email (mark inactive)
         await OtpModel.updateMany(
             { email: email.toLowerCase(), isActive: true },
-            { $set: { isActive: false, is_active: false, deleted_at: new Date() } }
+            { $set: { isActive: false, isLocked: false, deletedAt: new Date() } }
         );
 
         const otpDoc = await OtpModel.create({
             email: email.toLowerCase(),
             otp: otpHash,
-            expire_at: expireAt,
-            attempt_count: 0,
-            is_locked: false,
+            expireAt: expireAt,
+            attemptCount: 0,
+            isLocked: false,
             isActive: true,
-            is_active: true,
             meta: { digits },
         });
 
@@ -71,17 +70,16 @@ const OTPService = {
         const otpRecord = await OtpModel.findOne({
             email: email.toLowerCase(),
             isActive: true,
-        }).select("+otp +attempt_count +is_locked +expire_at");
+        }).select("+otp +attemptCount +isLocked +expireAt");
 
         if (!otpRecord) return { ok: false, reason: "no_active_otp" };
 
-        if (otpRecord.is_locked) return { ok: false, reason: "otp_locked" };
+        if (otpRecord.isLocked) return { ok: false, reason: "otp_locked" };
 
-        if (otpRecord.expire_at && new Date() > otpRecord.expire_at) {
+        if (otpRecord.expireAt && new Date() > otpRecord.expireAt) {
             // expire and mark inactive
             otpRecord.isActive = false;
-            otpRecord.is_active = false;
-            otpRecord.deleted_at = new Date();
+            otpRecord.deletedAt = new Date();
             await otpRecord.save();
             return { ok: false, reason: "otp_expired" };
         }
@@ -92,23 +90,22 @@ const OTPService = {
         if (matched) {
             // successful verification -> mark inactive
             otpRecord.isActive = false;
-            otpRecord.is_active = false;
-            otpRecord.deleted_at = new Date();
+            otpRecord.deletedAt = new Date();
             await otpRecord.save();
             return { ok: true, otpDoc: otpRecord };
         }
 
         // failed attempt
-        otpRecord.attempt_count = (otpRecord.attempt_count || 0) + 1;
-        otpRecord.last_attempt_at = new Date();
+        otpRecord.attemptCount = (otpRecord.attemptCount || 0) + 1;
+        otpRecord.lastAttemptAt = new Date();
 
-        if (otpRecord.attempt_count >= MAX_ATTEMPTS) {
-            otpRecord.is_locked = true;
+        if (otpRecord.attemptCount >= MAX_ATTEMPTS) {
+            otpRecord.isLocked = true;
         }
 
         await otpRecord.save();
 
-        const reason = otpRecord.is_locked ? "otp_locked" : "invalid_otp";
+        const reason = otpRecord.isLocked ? "otp_locked" : "invalid_otp";
         return { ok: false, reason };
     },
 
@@ -120,7 +117,7 @@ const OTPService = {
         if (!email) return false;
         await OtpModel.updateMany(
             { email: email.toLowerCase(), isActive: true },
-            { $set: { isActive: false, is_active: false, deleted_at: new Date() } }
+            { $set: { isActive: false, deletedAt: new Date() } }
         );
         return true;
     },

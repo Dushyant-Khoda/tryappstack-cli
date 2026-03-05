@@ -60,9 +60,10 @@ program
     .command("add-controller <name>")
     .alias("c")
     .description("Create a new controller with CRUD methods")
-    .action((name) => {
+    .option("--skip-doc, --sd", "Skip generating documentation")
+    .action((name, opts) => {
         const addControllerCommand = require("../lib/commands/addController");
-        addControllerCommand(name);
+        addControllerCommand(name, { skipDoc: opts.skipDoc || false });
     });
 
 program
@@ -78,18 +79,20 @@ program
     .command("add-router <name>")
     .alias("r")
     .description("Create a new Express router with CRUD routes")
-    .action((name) => {
+    .option("--skip-doc, --sd", "Skip generating documentation")
+    .action((name, opts) => {
         const addRouterCommand = require("../lib/commands/addRouter");
-        addRouterCommand(name);
+        addRouterCommand(name, { skipDoc: opts.skipDoc || false });
     });
 
 program
     .command("add-module <name>")
     .alias("mod")
     .description("Create controller + model + router as a full module")
-    .action((name) => {
+    .option("--skip-doc, --sd", "Skip generating documentation")
+    .action((name, opts) => {
         const addModuleCommand = require("../lib/commands/addModule");
-        addModuleCommand(name);
+        addModuleCommand(name, { skipDoc: opts.skipDoc || false });
     });
 
 program

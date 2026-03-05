@@ -2,7 +2,7 @@
 /Src/Uploads/*
 !Src/Uploads/Logs
 /Src/Uploads/Logs/*
-config.env
+.env.*
 .env
-.env.local
 *.pem
+coverage/

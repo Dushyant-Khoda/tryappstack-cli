@@ -1,11 +1,20 @@
 import { DEBUG_MODE } from "../../Config";
 import { ValidationError } from "joi";
 import consola from "consola";
-import { CustomErrorHandler } from "../Utils";
+import { CustomErrorHandler, Log } from "../Utils";
 
 const ErrorMiddleware = (error, req, res, next) => {
     error.statusCode = error.statusCode || 500;
     error.message = error.message || "Internal Server Error";
+
+    // ── Persist error to log file ───────────────────────────
+    Log.error("ErrorMiddleware", {
+        method: req.method,
+        url: req.originalUrl,
+        statusCode: error.statusCode,
+        message: error.message,
+        stack: DEBUG_MODE ? error.stack : undefined,
+    });
 
     // Wrong Mongodb ID Error
     if (error.name === "CastError") {
@@ -33,9 +42,6 @@ const ErrorMiddleware = (error, req, res, next) => {
     // Joi Error
     if (error instanceof ValidationError) {
         error.statusCode = 422;
-        // const data = {
-        //   message: error,
-        // };
         error = new CustomErrorHandler(error.message, error.statusCode);
     }
     res.status(error.statusCode).json({

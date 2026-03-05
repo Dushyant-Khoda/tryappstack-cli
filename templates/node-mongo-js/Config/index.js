@@ -18,7 +18,9 @@ export const {
     SMTP_PORT,
     SMTP_PASS,
     IS_S3,
-    CLOUD_NAME,
-    CLOUD_API_KEY,
-    CLOUD_API_SECRET,
+    CLOUDINARY_NAME,
+    CLOUDINARY_API_KEY,
+    CLOUDINARY_API_SECRET,
+    RATE_LIMIT_WINDOW_MS,
+    RATE_LIMIT_MAX,
 } = process.env;
