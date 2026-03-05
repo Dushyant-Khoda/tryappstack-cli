@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Dushyant-Khoda/tryappstack-cli/compare/v1.1.0...v1.2.0) (2026-03-05)
+
+
+### Features
+
+* test npm publish ([0c630c6](https://github.com/Dushyant-Khoda/tryappstack-cli/commit/0c630c6f55aab51363e2158ed44ac6fc1c798a56))
+
 # [1.1.0](https://github.com/Dushyant-Khoda/tryappstack-cli/compare/v1.0.5...v1.1.0) (2026-03-05)
 
 
