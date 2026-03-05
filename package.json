@@ -1,6 +1,6 @@
 {
   "name": "tryappstack",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "CLI tool to bootstrap production-ready applications using modern boilerplates",
   "license": "MIT",
   "author": "Dushyant Khoda",
