@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Dushyant-Khoda/tryappstack-cli/compare/v1.2.0...v1.2.1) (2026-03-05)
+
+
+### Bug Fixes
+
+* publish to npm registry instead of github registry ([ce40a7c](https://github.com/Dushyant-Khoda/tryappstack-cli/commit/ce40a7c79d4934f73646d77c6a0cbc0267a3dfd1))
+
 # [1.2.0](https://github.com/Dushyant-Khoda/tryappstack-cli/compare/v1.1.0...v1.2.0) (2026-03-05)
 
 
