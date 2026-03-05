@@ -1,3 +1,10 @@
+# 1.0.0 (2026-03-05)
+
+
+### Features
+
+* enhance Node.js MongoDB template with authentication, testing, Docker, CI/CD, and update CLI commands to support new features. ([3dd6783](https://github.com/Dushyant-Khoda/tryappstack-cli/commit/3dd678356d54e7dbf960fc86a8b11bc4c5246aa6))
+
 # Changelog
 
 All notable changes to this project are documented in this file.
