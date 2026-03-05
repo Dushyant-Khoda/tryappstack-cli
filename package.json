@@ -1,25 +1,24 @@
 {
   "name": "tryappstack",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "CLI tool to bootstrap production-ready applications using modern boilerplates",
   "license": "MIT",
   "author": "Dushyant Khoda",
   "homepage": "https://tryappstack.vercel.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dushyant-Khoda/tryappstack-cli"
+    "url": "git+https://github.com/Dushyant-Khoda/tryappstack-cli.git"
   },
   "bugs": {
     "url": "https://github.com/Dushyant-Khoda/tryappstack-cli/issues"
   },
   "main": "lib/commands/init.js",
   "bin": {
-    "tryappstack": "./bin/cli.js",
-    "tas": "./bin/cli.js"
+    "tryappstack": "bin/cli.js",
+    "tas": "bin/cli.js"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "files": [
     "bin/",
