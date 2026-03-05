@@ -10,7 +10,7 @@
 [![downloads](https://img.shields.io/npm/dm/tryappstack)](https://www.npmjs.com/package/tryappstack)
 [![license](https://img.shields.io/npm/l/tryappstack)](https://www.npmjs.com/package/tryappstack)
 
-**[Website](https://tryappstack.vercel.app/)** · **[npm](https://www.npmjs.com/package/tryappstack)** · **[GitHub](https://github.com/Dushyant-Khoda/tryappstack)**
+**[Website](https://tryappstack.vercel.app/)** · **[npm](https://www.npmjs.com/package/tryappstack)** · **[GitHub](https://github.com/Dushyant-Khoda/tryappstack-cli)**
 
 </div>
 

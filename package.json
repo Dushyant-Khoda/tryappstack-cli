@@ -7,10 +7,10 @@
   "homepage": "https://tryappstack.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dushyant-Khoda/tryappstack"
+    "url": "https://github.com/Dushyant-Khoda/tryappstack-cli"
   },
   "bugs": {
-    "url": "https://github.com/Dushyant-Khoda/tryappstack/issues"
+    "url": "https://github.com/Dushyant-Khoda/tryappstack-cli/issues"
   },
   "main": "lib/commands/init.js",
   "bin": {

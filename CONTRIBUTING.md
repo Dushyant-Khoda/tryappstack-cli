@@ -6,10 +6,10 @@ Thank you for your interest in contributing. This guide explains how you can hel
 
 ### 1. Fork the repository
 
-Click **Fork** on the [TryAppStack GitHub repository](https://github.com/Dushyant-Khoda/tryappstack) and clone your fork locally:
+Click **Fork** on the [TryAppStack GitHub repository](https://github.com/Dushyant-Khoda/tryappstack-cli) and clone your fork locally:
 
 ```bash
-git clone https://github.com/Dushyant-Khoda/tryappstack.git
+git clone https://github.com/Dushyant-Khoda/tryappstack-cli.git
 cd tryappstack
 ```
 
@@ -90,6 +90,6 @@ Keep commands focused and document them in the main README.
 
 ## Questions?
 
-Open an [issue](https://github.com/Dushyant-Khoda/tryappstack/issues) for bugs or feature ideas.
+Open an [issue](https://github.com/Dushyant-Khoda/tryappstack-cli/issues) for bugs or feature ideas.
 
 Thank you for contributing.
